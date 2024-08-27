@@ -1,0 +1,431 @@
+body {
+    font-family: "Andika", sans-serif;
+    background-color: #f5f5f5;
+    padding: 1.25em;
+    margin: 0;
+    font-size: 16px;
+}
+
+a {
+    color: inherit;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.lm-container,
+.quiz-container,
+.os-container {
+    background-color: #fff;
+    padding: 1.25em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 2em auto;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#learningModule {
+    width: 100%;
+    margin: 1em auto;
+}
+
+#learningModule,
+#quizContainer {
+    display: none; /* Initially hide the learning module and quiz */
+}
+
+/* Explanation of Lipolysis and Oxidation */
+.learning-module-pc {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#introduction,
+#impactOnFood {
+    border: 1.5px solid #e07e07;
+    padding: 0.8em;
+    width: 90%;
+    margin: 0.5em auto;
+}
+
+.lm-text {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.lm-title {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.75em;
+    text-decoration: underline;
+}
+
+.lm-subtitle {
+    font-size: 1.35em;
+    margin-bottom: 0.2em; 
+}
+
+.lm-section-title {
+    margin: 1.2em auto 0.25em;
+    width: fit-content;
+    max-width: 90%;
+    padding: 0;
+    font-size: 1.25em;
+}
+
+.example {
+    margin-top: 0.15em;
+    margin-bottom: 0.75em;
+}
+
+.example button {
+    background-color: #31a581;
+    font-family: "Schoolbell", cursive, sans-serif;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8em;
+    margin-top: 0.25em;
+    cursor: pointer;
+}
+
+.example button:hover {
+    font-style: italic;
+    background-color: #2b8a6c;
+}
+
+.example button:active {
+    background-color: #226953;
+}
+
+.example p.hidden {
+    display: none;
+}
+
+.lm-example {
+    border: 1.5px solid #31a581;
+    border-radius: 5px;
+    padding: 0.8em;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    font-style: italic;
+    font-size: 0.85em;
+}
+
+/* Interactive Quiz Question */
+#quiz {
+    width: 90%;
+    padding: 0.85em;
+    margin: 1em auto 0;
+}
+
+#quizQuestion {
+    font-family: "Libre Baskerville", serif;
+    margin-top: 0;
+}
+
+#quizOptions button {
+    display: block;
+    width: 80%;
+    padding: 0.8em;
+    margin: 0.8em auto 0;
+    background-color: #ffdb0f;
+    font-family: "Andika", sans-serif;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#quizOptions button:hover {
+    transition: background-color 0.3s;
+    background-color: #dcbe0f;
+}
+
+#quizOptions button:active {
+    background-color: #cbb019;
+}
+
+#quizFeedback {
+    margin: 0.5em auto;
+    width: fit-content;
+    font-size: 1.35em;
+    font-variant: all-small-caps;
+    font-weight: bold;
+    color: #182471;
+}
+
+.complete-learning-module-btn {
+    font-family: "Schoolbell", cursive, sans-serif;
+    font-size: 1.2em;
+    width: fit-content;
+    max-width: 75%;
+    margin: 0.2em auto;
+}
+
+.complete-learning-module-btn:hover {
+    cursor: pointer;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 125%;
+}
+
+.os-container { /* Ensures the oxidation simulator is initially visible */
+    display: block;
+}
+
+.os-container-pc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.learning-module-btn {
+    font-family: "Andika", sans-serif;
+    border: 1px solid #4f518c;
+    border-radius: 10px;
+    color: white;
+    background-color: #9395cd;
+    padding: 0.35em 0.65em;
+}
+
+.learning-module-btn:hover {
+    transition: background-color 0.2s ease-in;
+    background-color: #797bb5;
+    border: 1px solid #3c3e70;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Lipid Oxidation Simulator Title */
+.os-title {
+    font-family: "Libre Baskerville", serif;
+    text-decoration: underline;
+    width: fit-content;
+    max-width: 100%;
+    margin: 1em auto 0.5em;
+}
+
+/* How to Use Button */
+#toggleHowToUse {
+    font-family: "Schoolbell", cursive, sans-serif;
+    color: #00A676;
+    border: 1.5px solid #00A676;
+    border-radius: 3px;
+    background-color: #eeeeee;
+}
+
+#toggleHowToUse:hover {
+    font-weight: bold;
+    padding: 0.15em 0.5em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Explanation of Oxidation Simulator Container */
+#howToUseSection {
+    border: 1.5px solid #d11149;
+    border-radius: 20px;
+    padding: 0.85em;
+    width: 95%;
+    margin: 0.5em auto;
+    font-size: 0.9em;
+}
+
+.use-title {
+    color: #1a8fe3;
+    font-size: 1.75em;
+    font-variant: all-small-caps;
+    margin-top: 0;
+    margin-bottom: 0.25em;
+}
+
+.use-explanation {
+    max-width: 80%;
+    margin: 0.35em auto;
+}
+
+/* Container for Simulation Lipid */
+.lipid-container {
+    margin-top: 2em;
+}
+
+.lipid {
+    width: 100px;
+    height: 100px;
+    background-color: #FFFF99;
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+/* Container for Environment Variables */
+.controls {
+    margin: 1em auto;
+    border: 1px solid black;
+    padding: 1em;
+    width: fit-content;
+    max-width: 90%;
+}
+
+.controls label {
+    display: block;
+    margin: 1.2em 0 1px;
+}
+
+.reset-btn {
+    display: block;
+    font-family: "Schoolbell", cursive, sans-serif;
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    background-color: #e07e07;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background-color: #c66a04;
+}
+
+.reset-btn:active {
+    background-color: #a55602;
+}
+
+#oxidation-result {
+    color: #0075F2;
+    width: fit-content;
+    max-width: 95%;
+    margin: 0.25em auto 0.15em;
+    padding: 0.75em;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+/* Effect of Oxidation on Lipid */
+.feedback {
+    margin: 0.15em auto 1.5em;
+    max-width: 80%;
+}
+
+/* Lipid Oxidation Chart */
+.chart-container {
+    margin-top: 0.5em;
+}
+
+@keyframes oxidize {
+    0%   { background-color: #FFFF99; }  /* Very Light Yellow */
+    10%  { background-color: #FFFF66; }  /* Light Yellow */
+    20%  { background-color: #FFFF33; }  /* Yellow */
+    30%  { background-color: #FFCC33; }  /* Light Gold */
+    40%  { background-color: #FFCC00; }  /* Gold */
+    50%  { background-color: #FF9900; }  /* Light Orange */
+    60%  { background-color: #FF6600; }  /* Orange */
+    70%  { background-color: #FF3300; }  /* Dark Orange */
+    80%  { background-color: #FF0000; }  /* Red */
+    90%  { background-color: #CC0000; }  /* Dark Red */
+    100% { background-color: #990000; }  /* Very Dark Red */
+}
+
+
+.lipid.oxidizing {
+    animation: oxidize 5s linear infinite;
+}
+
+/* Popup Button */
+.popup-btn {
+    font-family: "Andika", sans-serif;
+    margin: 3em auto 1em; 
+    padding: 0.5em 1em;
+    background-color: #31a581;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-btn:hover {
+    background-color: #2b8a6c;
+}
+
+.popup-btn:active {
+    background-color: #226953;
+}
+
+/* The Popup */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 1em 2em;
+    border: 2px dashed #39a169;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.about-lipid-title {
+    font-variant: all-small-caps;
+    font-size: 2em;
+    color: #a13971;
+    margin-bottom: 0;
+}
+
+.about-lipid-subtitle {
+    font-size: 1.15em;
+    font-family: "Schoolbell", cursive, sans-serif;
+    text-decoration: underline;
+    margin-top: 1em;
+    margin-bottom: 0.15em;
+}
+
+/* Close Button */
+.close-popup {
+    color: #3970a1;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: #26567e;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Media Queries for Responsive Design */
+@media (min-width: 280px) and (max-width: 550px) {
+    body {
+        font-size: 90%;
+    }
+
+    .lm-container,
+    .container {
+        max-width: 90;
+        width: 90%;
+    }
+}

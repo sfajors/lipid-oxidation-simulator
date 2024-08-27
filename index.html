@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lipid Oxidation Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Schoolbell&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Learning Module (Explanation of Lipolysis and Oxidation) -->
+    <div class="lm-container" id="learningModule">
+        <span class="learning-module-pc">
+            <h2 class="lm-title">Learning About Lipid Oxidation</h2>
+            <section id="introduction">
+                <h3 class="lm-subtitle">Introduction to Lipid Reactions</h3>
+                <div class="lm-text">Let's explore two important processes: Lipolysis and Oxidation.</div>
+        
+                <h4 class="lm-section-title">Lipolysis</h4>
+                <p class="lm-text">Imagine you have a piggy bank full of coins. Lipolysis is like when your body decides to use some of the stored fat (coins) as energy. When you need energy, your body "breaks open" the fat stores.</p>
+                <div class="example">
+                    <p><span class="bold">Example:</span> After Playing Sports</p>
+                    <button id="showLipolysisExample">What happens when you play sports?</button>
+                    <p id="lipolysis-example" class="hidden lm-example">When you run around and play sports, your body needs more energy. If you've used up the quick energy from food, your body will start using stored fat for extra energy. That's lipolysis in action!</p>
+                </div>
+        
+                <h4 class="lm-section-title">Oxidation</h4>
+                <p class="lm-text">Oxidation is like when your body turns fat into energy, much like a car engine burning fuel to make the car go. Oxidation happens in your body's "engine" (cells) to create the power you need to move, think, and grow.</p>
+                <div class="example">
+                    <p><span class="bold">Example:</span> Breathing</p>
+                    <button id="showOxidationExample">How does breathing relate to oxidation?</button>
+                    <p id="oxidation-example" class="hidden lm-example">When you breathe in oxygen, your body uses that oxygen to help "burn" the fat or sugar and turn it into energy. So when you take a deep breath and run fast, your body is using oxidation to keep you moving!</p>
+                </div>
+            </section>
+        
+            <section id="impactOnFood">
+                <h3 class="lm-subtitle">Impact on Food Quality</h3>
+                <div class="lm-text">Learn how lipids (fats) change in flavor, aroma, and stability when they oxidize.</div>
+        
+                <h4 class="lm-section-title">Flavor</h4>
+                <p class="lm-text">When lipids oxidize, the flavor of the food can change.</p>
+                <div class="example">
+                    <p><span class="bold">Example:</span> Old Potato Chips</p>
+                    <button id="showFlavorExample">What happens to potato chips when they get old?</button>
+                    <p id="flavor-example" class="hidden lm-example">When potato chips have been sitting around for too long and the fats have oxidized, they can taste stale and not as yummy.</p>
+                </div>
+        
+                <h4 class="lm-section-title">Aroma</h4>
+                <p class="lm-text">The aroma, or smell, of food can change when lipids oxidize.</p>
+                <div class="example">
+                    <p><span class="bold">Example:</span> Spoiled Butter</p>
+                    <button id="showAromaExample">What happens when butter spoils?</button>
+                    <p id="aroma-example" class="hidden lm-example">Fresh butter smells good, but if butter sits out for too long and oxidizes, it can start to smell bad, kind of like old socks or something rotten.</p>
+                </div>
+        
+                <h4 class="lm-section-title">Stability</h4>
+                <p class="lm-text">Stability means how long food can stay good before it goes bad. When lipids oxidize, the food becomes less stable and goes bad more quickly.</p>
+                <div class="example">
+                    <p><span class="bold">Example:</span> Milk Going Bad</p>
+                    <button id="showStabilityExample">Why does milk spoil faster out of the fridge?</button>
+                    <p id="stability-example" class="hidden lm-example">When milk is left out of the fridge, the fats oxidize and make the milk spoil more quickly, leading to a sour taste and smell.</p>
+                </div>
+            </section>
+        </span>
+    </div>
+
+    <!-- Interactive Quiz Question -->
+    <div class="quiz-container" id="quizContainer">
+        <div id="quiz">
+            <h2 id="quizQuestion">Quiz Question</h2> <!-- Fixed from <h3> -->
+            <div id="quizOptions"></div>
+            <p id="quizFeedback"></p>
+        </div>
+        <div class="complete-learning-module-btn">Go to Oxidation Simulator</div>
+    </div>
+
+    <!-- Lipid Oxidation Simulator -->
+    <div class="os-container">
+        <div class="os-container-pc">
+            <button class="learning-module-btn">Learning About Lipolysis and Oxidation</button>
+
+            <h1 class="os-title">Lipid Oxidation Simulator</h1>
+            <div id="howToUseSection" class="hidden">
+                <h3 class="use-title">How to Use the Lipid Oxidation Simulator</h3>
+                <p>This simulator is designed to help you understand and visualize the process of lipid oxidation in olive oil under various conditions. Adjust the sliders to see how time, temperature, and exposure to air affect the oxidation of olive oil. Results will display graphically and update in real-time, allowing you to explore different scenarios, even beyond typical real-world conditions.</p>
+                <div class="use-explanation">
+                    <div><span class="bold">Time (Days):</span> Move the slider to increase or decrease the simulation time.</div>
+                    <div><span class="bold">Temperature (°C):</span> Enter a value to set the temperature and observe how it influences oxidation.</div>
+                    <div><span class="bold">Exposure to Air:</span> Check or uncheck the box to simulate the effect of air on lipid oxidation.</div>
+                </div>
+            </div>
+            <button id="toggleHowToUse">How to Use</button>
+
+            <div class="lipid-container">
+                <div class="lipid"></div>
+            </div>
+
+            <div class="controls">
+                <label for="time-slider">Time (Days):</label>
+                <input type="range" id="time-slider" min="0" max="30" value="0">
+                <div id="current-day">Day: 0</div> <!-- Display the current day under the slider -->
+
+                <label for="temperature">Temperature (°C):</label>
+                <input type="number" id="temperature" value="20" min="0" max="100">
+
+                <label for="air-exposure">Exposure to Air:</label>
+                <input type="checkbox" id="air-exposure">
+
+                <!-- Reset Button -->
+                <button id="reset-button" class="reset-btn">Reset Simulation</button>
+            </div>
+
+            <div class="result">
+                <div id="oxidation-result">Oxidation Level: Low</div>
+            </div>
+
+            <div class="feedback">
+                <div id="feedback-message">Move the sliders or adjust the settings to see how oxidation changes!</div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="oxidationChart" width="300" height="200"></canvas>
+            </div>
+
+            <!-- Button to open the popup -->
+            <button id="openPopup" class="popup-btn">Learn More About This Lipid</button>
+
+            <!-- The Popup -->
+            <div id="lipidPopup" class="popup hidden">
+                <div class="popup-content">
+                    <span id="closePopup" class="close-popup">&times;</span>
+                    <h2 class="about-lipid-title">About the Simulated Lipid</h2>
+                    <h4 class="about-lipid-subtitle" style="margin-top: 0.25em;">What is this lipid?</h4>
+                    <p style="margin-top: 0.15em; font-size: 0.9em;">This simulation models the oxidation process of olive oil, a commonly used lipid in culinary and industrial applications.</p>
+                    
+                    <h4 class="about-lipid-subtitle">Why olive oil?</h4>
+                    <p style="margin-top: 0.15em; font-size: 0.9em">Olive oil was chosen for its widespread use and the well-documented effects of oxidation on its quality, flavor, and health benefits.</p>
+                    
+                    <h4 class="about-lipid-subtitle">Effects of Different Controls:</h4>
+                    <ul style="margin-top: 0.15em; font-size: 0.9em;">
+                        <li><span class="bold" style="color: #39a169">Time (Days):</span> The longer the olive oil is stored, especially under non-optimal conditions, the more it oxidizes.</li>
+                        <li><span class="bold" style="color: #39a169">Temperature (°C):</span> Higher temperatures accelerate the oxidation process, leading to quicker degradation.</li>
+                        <li><span class="bold" style="color: #39a169">Exposure to Air:</span> Air exposure increases oxidation due to the presence of oxygen, which reacts with the lipids.</li>
+                    </ul>
+                    
+                    <h4 class="about-lipid-subtitle">Ranges of Oxidation:</h4>
+                    <ul style="margin-top: 0.15em; font-size: 0.9em;">
+                        <li><span class="bold" style="color: #39a169">Very Low:</span> Fresh olive oil with minimal oxidation.</li>
+                        <li><span class="bold" style="color: #39a169">Low:</span> Slight oxidation, still generally good quality.</li>
+                        <li><span class="bold" style="color: #39a169">Moderate:</span> Noticeable oxidation, with some degradation in flavor and quality.</li>
+                        <li><span class="bold" style="color: #39a169">High:</span> Significant oxidation, with clear rancidity and loss of beneficial properties.</li>
+                        <li><span class="bold" style="color: #39a169">Very High:</span> Severe oxidation, making the oil less palatable and less healthy.</li>
+                        <li><span class="bold" style="color: #39a169">Extreme:</span> Olive oil is highly oxidized and likely unfit for consumption.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
